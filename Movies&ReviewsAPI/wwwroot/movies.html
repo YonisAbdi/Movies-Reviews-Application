@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="HomePage.html">Movies&Reviews</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="accountLogin.html">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="movies.html">Movies</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="reviews.html">Reviews</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Manage Movies</h2>
+
+        <!-- Add Movie Form -->
+        <div class="mt-4">
+            <h4>Add New Movie</h4>
+            <form id="add-movie-form">
+                <div class="form-group">
+                    <label for="movie-title">Movie Title</label>
+                    <input type="text" class="form-control" id="movie-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="movie-release-year">Release Year</label>
+                    <input type="number" class="form-control" id="movie-release-year" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Movie</button>
+            </form>
+        </div>
+
+        <!-- Movie Dropdown -->
+        <div class="mt-4">
+            <h4>Select a Movie</h4>
+            <select id="movie-dropdown" class="form-control">
+                <option value="">Select a movie...</option>
+                <!-- Movie options will be dynamically populated here -->
+            </select>
+        </div>
+        <div id="movie-details" class="mt-4"></div>
+
+        <!-- All Movies Table -->
+        <div class="mt-4">
+            <h4>All Movies</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Release Year</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="all-movies-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Edit Movie Modal -->
+    <div class="modal fade" id="editMovieModal" tabindex="-1" aria-labelledby="editMovieModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editMovieModalLabel">Edit Movie</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-movie-form">
+                        <input type="hidden" id="edit-movie-id">
+                        <div class="form-group">
+                            <label for="edit-movie-title">Title</label>
+                            <input type="text" class="form-control" id="edit-movie-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-movie-release-year">Release Year</label>
+                            <input type="number" class="form-control" id="edit-movie-release-year" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save-movie-changes">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/movies.js"></script>
+</body>
+</html>
